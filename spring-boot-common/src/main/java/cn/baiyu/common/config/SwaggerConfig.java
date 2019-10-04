@@ -1,4 +1,4 @@
-package cn.baiyu.config;
+package cn.baiyu.common.config;
 
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -31,8 +31,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("JPA接口文档")
-                .description("这是一个给其他人员调用后端服务接口的文档平台")
+                .title("baiyu的学习接口文档")
+                .description("这是一个自测调用后端服务接口的文档平台")
                 .version("1.0.0")
                 .license("白羽")
                 .build();

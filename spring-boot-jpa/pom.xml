@@ -27,7 +27,11 @@
             <artifactId>commons-lang3</artifactId>
         </dependency>
 
-
+        <dependency>
+            <groupId>cn.baiyu</groupId>
+            <artifactId>spring-boot-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 </project>

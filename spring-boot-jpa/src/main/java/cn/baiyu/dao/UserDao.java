@@ -22,12 +22,12 @@ public interface UserDao extends PagingAndSortingRepository<User,Long>, JpaSpeci
 	Optional<User> findById(Long id);
 
 	//使用自动命名规则进行查询服务 
-	List<User> findByCodeAndName(String code,String name);
+	User findByCodeAndName(String code,String name);
 	
 	//使用@Query进行 自定义sql编写
 	//nativeQuery=true,正常的sql语法
 	//负责是hsql语法
-	@Query(value="select * from user where code = ?1",nativeQuery=true)
+	@Query(value="select * from jpa_user where code = ?1",nativeQuery=true)
 	List<User> queryByCode(String code);
 	
 	//分页

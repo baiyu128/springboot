@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import static javax.persistence.TemporalType.TIMESTAMP;
 
@@ -23,6 +24,9 @@ import static javax.persistence.TemporalType.TIMESTAMP;
 @Getter
 @Setter
 @Table(name="jpa_user")//自定义表名
+@AllArgsConstructor
+@NoArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
 public class User implements Serializable{
 	 /**
 	 * 
@@ -43,8 +47,8 @@ public class User implements Serializable{
     /**
      * 名称
      */
-    @ApiModelProperty(value = "名称")
-    private String name;
+    @ApiModelProperty(value = "用户名")
+    private String username;
 
     /**
      * 创建时间
@@ -62,4 +66,11 @@ public class User implements Serializable{
     @ApiModelProperty(value = "修改时间",hidden = true)
     @LastModifiedDate //有修改时 会自动时间
     private Date gmtModified;
+
+    @ApiModelProperty(value = "昵称")
+    private String name;
+
+    @Column
+    @ApiModelProperty(hidden = true)
+    protected boolean isDeleted;
 }
