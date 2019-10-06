@@ -30,3 +30,6 @@ springboot 的@Async异步实现
 也可通过复杂配置，根据用户的角色进行分配权限，
 以及根据不同的权限访问不同的url，甚至相同的url不同的请求方法的权限验证，
 或者使用@RequiredRoles注解实现不同角色访问方法的控制
+
+### spring-cloud
+使用了eureka，feign，Ribbon，hystrix，gateway，还有config和bus组件未使用，在模块的readme文件中有配置详情

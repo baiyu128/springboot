@@ -14,6 +14,7 @@
         <module>spring-boot-common</module>
         <module>spring-boot-websocket</module>
         <module>spring-boot-async</module>
+        <module>spring-cloud</module>
     </modules>
     <packaging>pom</packaging>
 
