@@ -1,0 +1,12 @@
+#application.yml 配置如下：
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/socks?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+my:
+  config:
+    corePoolSize: 10
+    maxPoolSize: 20
+    queueCapacity: 10
