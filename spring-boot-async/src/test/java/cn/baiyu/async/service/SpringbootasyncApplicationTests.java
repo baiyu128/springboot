@@ -58,4 +58,19 @@ public class SpringbootasyncApplicationTests {
         }
         log.info("All tasks finished.");
     }
+
+    @Test
+    public void AsyncTaskTest2() throws InterruptedException, ExecutionException {
+        Future<String> task1 = task.doTask();
+        Future<String> task2 = task.doTask2();
+        for(;;){
+            if(task1.isDone() && task2.isDone()){
+                log.info("TASK1 result: {}",task1.get());
+                log.info("TASK2 result: {}",task2.get());
+                break;
+            }
+            Thread.sleep(1000);
+        }
+        log.info("All tasks finished.");
+    }
 }
