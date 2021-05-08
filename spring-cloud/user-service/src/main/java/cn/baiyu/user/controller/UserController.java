@@ -29,4 +29,10 @@ public class UserController {
         System.out.println("配置文件中的test.name = " + name);
         return userService.queryById(id);
     }
+
+    @GetMapping("/test")
+    public String test() {
+        System.out.println("Test");
+        return "test";
+    }
 }

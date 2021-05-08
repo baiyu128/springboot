@@ -15,4 +15,7 @@ public interface UserClient {
     //http://user-service/user/123
     @GetMapping("/user/{id}")
     User queryById(@PathVariable Long id);
+
+    @GetMapping("/user/test")
+    String test();
 }

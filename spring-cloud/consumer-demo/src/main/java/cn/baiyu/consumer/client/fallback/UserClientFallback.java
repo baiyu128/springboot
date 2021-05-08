@@ -13,4 +13,9 @@ public class UserClientFallback implements UserClient {
         user.setName("用户异常");
         return user;
     }
+
+    @Override
+    public String test() {
+        return "test error";
+    }
 }
