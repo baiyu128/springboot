@@ -2,13 +2,12 @@ package cn.baiyu.user.controller;
 
 import cn.baiyu.user.entity.User;
 import cn.baiyu.user.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @auther baiyu
@@ -16,6 +15,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
 
     @Resource
@@ -28,6 +28,12 @@ public class UserController {
     public User queryById(@PathVariable("id") Long id) {
         System.out.println("配置文件中的test.name = " + name);
         return userService.queryById(id);
+    }
+
+    @PostMapping("/list")
+    public List<User> getAllUser() {
+        log.info("查询所有用户");
+        return userService.getAllUser();
     }
 
     @GetMapping("/test")
