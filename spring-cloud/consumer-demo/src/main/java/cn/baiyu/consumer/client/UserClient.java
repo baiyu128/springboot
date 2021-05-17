@@ -6,6 +6,9 @@ import cn.baiyu.consumer.entity.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 //声明当前类是一个Feign客户端，指定服务名为user-service
 @FeignClient(value = "user-service", fallback = UserClientFallback.class,
@@ -18,4 +21,7 @@ public interface UserClient {
 
     @GetMapping("/user/test")
     String test();
+
+    @PostMapping("/list")
+    List<User> getAllUser();
 }

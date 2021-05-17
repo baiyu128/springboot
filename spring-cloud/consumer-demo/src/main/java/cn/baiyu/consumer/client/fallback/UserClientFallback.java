@@ -4,6 +4,9 @@ import cn.baiyu.consumer.client.UserClient;
 import cn.baiyu.consumer.entity.User;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class UserClientFallback implements UserClient {
     @Override
@@ -17,5 +20,10 @@ public class UserClientFallback implements UserClient {
     @Override
     public String test() {
         return "test error";
+    }
+
+    @Override
+    public List<User> getAllUser() {
+        return new ArrayList<>();
     }
 }
