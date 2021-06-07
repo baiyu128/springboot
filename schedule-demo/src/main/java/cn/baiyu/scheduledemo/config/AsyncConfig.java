@@ -30,9 +30,9 @@ public class AsyncConfig {
     private int queueCapacity;
     @Bean(name = "taskExecutor")
     public Executor taskExecutor() {
-        log.info(""+corePoolSize);
-        log.info(""+maxPoolSize);
-        log.info(""+queueCapacity);
+        log.info("核心大小{}", corePoolSize);
+        log.info("最大大小{}", maxPoolSize);
+        log.info("队列容量{}", queueCapacity);
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(corePoolSize);
         executor.setMaxPoolSize(maxPoolSize);
