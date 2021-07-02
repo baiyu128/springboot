@@ -19,6 +19,7 @@
         <module>spring-boot-dubbo-server</module>
         <module>spring-boot-dubbo-client</module>
         <module>spring-boot</module>
+        <module>java-utils</module>
     </modules>
     <packaging>pom</packaging>
 
