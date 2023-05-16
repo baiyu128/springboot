@@ -35,4 +35,14 @@ public class BasicController {
         return "Hello " + name;
     }
 
+    // http://127.0.0.1:8080/user
+    @RequestMapping("/user")
+    @ResponseBody
+    public User user() {
+        User user = new User();
+        user.setName("theonefx");
+        user.setAge(666);
+        return user;
+    }
+
 }
