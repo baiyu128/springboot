@@ -45,4 +45,11 @@ public class BasicController {
         return user;
     }
 
+    // http://127.0.0.1:8080/save_user?name=newName&age=11
+    @RequestMapping("/save_user")
+    @ResponseBody
+    public String saveUser(User u) {
+        return "user will save: name=" + u.getName() + ", age=" + u.getAge();
+    }
+
 }
