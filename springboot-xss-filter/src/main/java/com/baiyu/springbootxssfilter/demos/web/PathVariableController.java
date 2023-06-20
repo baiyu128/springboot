@@ -35,4 +35,10 @@ public class PathVariableController {
         return "User Id : " + userId + " Role Id : " + roleId;
     }
 
+    // http://127.0.0.1:8080/javabeat/somewords
+    @RequestMapping(value = "/javabeat/{regexp1:[a-z-]+}", method = RequestMethod.GET)
+    @ResponseBody
+    public String getRegExp(@PathVariable("regexp1") String regexp1) {
+        return "URI Part : " + regexp1;
+    }
 }
